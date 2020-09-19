@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Menu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/Css_PLSanPham.css" rel="stylesheet" />
+@using DoAn.Models;
+@model List<SanPham>
+
+<div class="container">
+<div class="row">
+    <div class="col-md-3">
+        @Html.Action("MenuDung","BanDoAn")
+    </div>
+    <div class="col-md-9">
+        <div class="khung">
+           
+                @foreach (var s in Model)
+                {       
+                     <div class="item">
+                        <a href="@Url.Action("ChiTietSP",new {msp=@s.MaSP})">
+                            <img id="h1" src="/Content/Image/@s.Hinh" style="width:250px; height:250px;"/>
+                        </a>
+                        <p id="b1" style="font-size:15pt">@s.TenSP</p>
+                        <p id="b1" style="font-size:18pt">@s.Gia</p>
+                        <button class="btn btn-outline-success" type="button" id="button"><a href="@Url.Action("ThemGioHang", "GioHang", new { masp=@s.MaSP, @strUrl=Request.Url.ToString()})" style="color:black; font-size:17pt">ADD TO CART</a></button>            
+                    </div>
+                }
+            </div>
+    </div>
+</div>
+
+
+</div>

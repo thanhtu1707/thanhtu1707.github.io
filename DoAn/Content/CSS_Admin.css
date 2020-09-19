@@ -1,0 +1,29 @@
+﻿body {
+}
+#menu {
+    background-color:black;
+}
+#menu ul li a {
+    font-size:20pt;
+    color:gray;
+}
+#list ul li {
+    height:80px;
+}
+#a1:hover {
+    background-color: #4CAF50;
+}
+
+#a2:hover {
+    background-color: #0ff;
+}
+
+#a3:hover {
+    background-color:  #ffd800;
+}
+#a4:hover {
+    background-color: #f00;
+}
+#a5:hover {
+    background-color: #808080;
+}

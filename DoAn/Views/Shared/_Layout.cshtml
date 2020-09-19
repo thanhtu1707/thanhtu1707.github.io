@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/CSS_Layout.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light @*fixed-top*@ bg-light" >
+        <div class="container">
+            <a class="narbar-brand" href="#"><img src="~/Content/Image/logo.png"/></a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active" >
+                        @Html.ActionLink("HOME","Home","BanDoAn")
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("ABOUT US","AboutUs","BanDoAn")
+                    </li>
+                    <li class="nav-item">
+                            @Html.ActionLink("MENU","Menu","BanDoAn")
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("REGISTER","DangKy","BanDoAn")
+                    </li>  
+                    <li class="nav-item">
+                        @Html.ActionLink("LOG IN","DangNhap","BanDoAn")
+                    </li>          
+                    <li>
+                        @Html.Action("PartialGioHang","GioHang")
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0" action="@Url.Action("TimKiem")" method="post" >
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="txtSearch"/>
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">SEARCH</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div>
+         @RenderBody()
+
+    </div>
+    <br /><br />
+    <div id="footer" class="bg-success">
+        <div class="container">
+            <div class="row" id="phan1-footer">
+                <img src="~/Content/Image/logo.png"/>
+                <div class="col-md-2">
+                    <h5 style="color:white">NUTRITION</h5>
+                    <h5 style="color:white">Sample Menu</h5>
+                    <h5 style="color:white">Contact Us</h5>
+                </div>
+                <div class="col-md-2">
+                    <h5 style="color:white">PRODUCTS</h5>
+                    <h5 style="color:white">Grids</h5>
+                    <h5 style="color:white">Single</h5>
+                </div>
+                <div class="col-md-2">
+                    <h5 style="color:white">PRICING</h5>
+                    <h5 style="color:white">Program</h5>
+                    <h5 style="color:white">Deals</h5>
+                </div>
+                <div class="col-md-2">
+                    <h4 style="color:white">SUPPORT</h4>
+                    <h4 style="color:white">Consultation</h4>
+                    <h4 style="color:white">About Us</h4>
+                </div>
+                <div class="col-md-2">
+                    <h4 style="color:white">FACEBOOK</h4>
+                    <h4 style="color:white">INSTAGRAM</h4>
+                    <h4 style="color:white">CALL</h4>
+                </div>
+            </div> 
+            <div>
+                <br />
+                <br />
+                <p style="color:white; text-align:center; font-size:15pt">@@2019-ALL RIGHT RESERVERD-thanhtu170799@gmail.com</p>
+                <br />  
+            </div>
+        </div>
+    </div>
+
+    
+
+    <script src="~/Content/jquery-3.3.1.min.js"></script>
+    <script src="~/Content/bootstrap/js/bootstrap.min.js"></script>
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

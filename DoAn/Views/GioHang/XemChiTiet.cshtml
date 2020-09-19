@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "XemChiTiet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/Css_PLSanPham.css" rel="stylesheet" />
+
+@using DoAn.Models
+@model Item
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <img src="/Content/Image/@Model.hinhanh" id="image"/>
+        </div>
+        <div class="col-md-5">
+            <h1 id="b1">@Model.tensp</h1>
+            <br />
+            <h4 id="b1" style="color:red">@Model.dongia</h4>
+            <br />
+            <h5>@Model.chitiet</h5>
+            <br />
+              <button class="btn btn-outline-success" type="submit" id="button">
+                    <a href="@Url.Action("ThemGioHang", "GioHang", new { masp=@Model.masp , strUrl=Request.Url.ToString()})" style="color:black; font-size:17pt">ADD TO CART</a>
+              </button>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+

@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+@using (Html.BeginForm())
+{ 
+    @Html.ValidationSummary(true)
+<fieldset>
+    <table style="text-align:left;font-weight:bold;font-size:32px; margin-left:150px; margin-top:40px;">
+        <thead >
+            <tr>
+                <th>PRODUCT NAME:</th>
+                <th>
+                    <a  style="width:1000px">@Html.TextBox("TenSP")</a> 
+                    <font color=red>
+                        @ViewData["Loi1"]
+                    </font>
+                </th>                 
+            </tr>
+            <tr>
+                    <th>IMAGE:</th>
+                <th>
+                    @*@Html.TextBox("Hinh") *@
+                    <input type="file" name="Hinh" >
+                    <font color=red>
+                        @ViewData["Loi1"]
+                    </font>
+                </th>     
+            </tr>
+            <tr>
+                    <th>PRICE:</th>
+                <th>
+                    @Html.TextBox("Gia") 
+                    <font color=red>
+                        @ViewData["Loi2"]
+                    </font>
+                </th>        
+            </tr>
+            <tr>
+                    <th>DESCRIPTION:</th>
+                <th>
+                    @Html.TextBox("MoTa") 
+                    <font color=red>
+                        @ViewData["Loi3"]
+                    </font>
+                </th>               
+            </tr>
+            <tr>
+                <th></th>
+                <th style="margin-left:60px">
+                    <input  type="submit" value="Create">
+                    @Html.ActionLink("BACK TO LIST","Index")
+                </th>
+                
+            </tr>
+             
+        </thead>
+    </table>
+     
+</fieldset>
+}

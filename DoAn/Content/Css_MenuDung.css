@@ -1,0 +1,11 @@
+﻿body {
+}
+a {
+    color:gray;
+    font-size:15pt;
+}
+#menudung:hover {
+    background-color:green;
+    color:white;
+}
+

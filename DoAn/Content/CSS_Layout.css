@@ -1,0 +1,124 @@
+﻿body {
+}
+.dropdown{
+	position: relative;
+	display: inline-block;
+}
+.dropdown-content{
+	display: none;
+	position: absolute;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.photobox {
+  display: inline-block;
+  margin-right:20px;
+}
+
+.photobox__previewbox {
+  position: relative;
+  overflow: hidden;
+}
+
+.photobox__preview {
+  display: block;
+  max-width: 100%;
+}
+
+.photobox__previewbox:before {
+  content: "";
+}
+
+.photobox_type7 .photobox__previewbox:before {
+  width: 0;
+  height: 0;
+  padding: 25%;
+
+  background-color: rgba(181, 174, 174, 0.36);
+  border-radius: 50%;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+
+  transition: -webkit-transform 0.3s ease;
+
+  transition: transform 0.3s ease;
+
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  -webkit-transform: translate(-50%, -50%) scale(0);
+          transform: translate(-50%, -50%) scale(0);
+}
+
+.photobox_type7:hover .photobox__previewbox:before {
+  -webkit-transform: translate(-50%, -50%) scale(4);
+          transform: translate(-50%, -50%) scale(4);
+  transition-duration:0.3s;
+}
+
+.photobox_type7 .photobox__label {
+  width: 95%;
+  text-align: center;
+
+  -webkit-transform: translate(-200%, -50%);
+
+          transform: translate(-200%, -50%);
+  transition: -webkit-transform 0.3s
+    ease-out;
+  transition: transform 0.3s
+    ease-out;
+  transition: transform 0.3s
+    ease-out, -webkit-transform 0.3s
+    ease-out;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+}
+
+.photobox_type7:hover .photobox__label {
+  transition-duration: 0.5s;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.photobox_type7 .photobox__preview {
+  transition: -webkit-transform 0.8s
+    cubic-bezier(0.71, 0.05, 0.29, 0.9);
+  transition: transform 0.5s
+    cubic-bezier(0.71, 0.05, 0.29, 0.9);
+  transition: transform 0.3s
+    cubic-bezier(0.71, 0.05, 0.29, 0.9), -webkit-transform 0.3s
+    cubic-bezier(0.71, 0.05, 0.29, 0.9);
+  -webkit-transform: scale(1) rotate(0);
+          transform: scale(1) rotate(0);
+}
+
+.photobox_type7:hover .photobox__preview {
+  -webkit-transform: scale(1.2) rotate(5deg);
+          transform: scale(1.2) rotate(5deg);
+}
+.photobox__label {
+    color:white;
+    font-size:22pt;
+}
+#hinh1 {
+    padding-left:80px;
+}
+#navbarSupportedContent ul li a{
+    margin-left:40px;
+    font-size:20px;
+    color:black;
+}
+
+#phan1-footer {
+    padding-top:25px;
+}
+
+#navbarSupportedContent ul li:hover {
+    text-decoration:none;
+}

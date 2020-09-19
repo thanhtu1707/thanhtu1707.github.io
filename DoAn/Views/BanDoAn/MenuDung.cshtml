@@ -1,0 +1,23 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>MenuDung</title>
+    <link href="~/Content/Css_MenuDung.css" rel="stylesheet" />
+</head>
+    @using DoAn.Models;
+    @model IEnumerable<DoAn.Models.Loai>
+<body>
+    <div class="list-group">
+        @foreach (var s in Model)
+        {
+            <a style="text-decoration:none" href="@Url.Action("PhanLoaiSP", new {ml=@s.MaLoai})" class="list-group-item" id="menudung">@s.TenLoai</a>
+        }
+    </div>
+</body>
+</html>

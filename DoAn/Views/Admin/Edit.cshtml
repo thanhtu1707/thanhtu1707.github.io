@@ -1,0 +1,64 @@
+﻿@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<h1 style="margin-left:100px;">Edit</h1>
+@using (Html.BeginForm())
+{ 
+    @Html.ValidationSummary(true)
+    <fieldset>
+      
+     <table style="margin-left:200px; font-size:35px;">
+         <tr>
+        <tr class="editor-field">
+           
+            <th>Ten san pham:</th> 
+            <th>
+                 @Html.TextBox("TenSP")
+                 @ViewData["Loi1"]
+            </th>
+           
+        </tr>
+
+        <tr class="editor-field">
+          
+            <th>Hinh Anh:</th>  
+            <th>
+                 @Html.TextBox("Hinhanh")
+                 @ViewData["Loi2"]
+            </th>
+           
+
+        </tr>
+        <tr class="editor-field">
+          
+            <th>Gia:</th> 
+            <th>
+                @Html.TextBox("Gia")
+                @ViewData["Loi3"]
+            </th> 
+            
+        </tr>
+         <tr class="editor-field">
+             <th>   Mô tả:</th>
+         <th>
+               @Html.TextBox("Mota")
+               @ViewData["Loi4"]
+
+         </th>
+          
+        </tr>
+
+        <tr>
+
+            <th></th>
+            <th>  <input type="submit" value="Save"/>
+                 @Html.ActionLink("Back to List","Index")
+            </th>        
+       </tr>
+    </tr>
+</table>
+    </fieldset>
+    
+}

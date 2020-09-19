@@ -1,0 +1,75 @@
+﻿@{
+    ViewBag.Title = "DangKy";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table align="center" >
+    <h1 style="text-align:center; color:red">SIGN UP</h1>
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+        <tr style="height:60px">
+            <td style="font-size:19pt">Full Name:</td>
+            <td>@Html.TextBox("HoTen")
+                @ViewData["Loi1"]
+            </td>
+        </tr>
+        <tr style="height:60px">
+            <td style="font-size:20pt">User Name:</td>
+            <td>@Html.TextBox("TenDN")
+                @ViewData["Loi2"]
+            </td>
+        </tr>
+        
+        <tr style="height:60px">
+            <td style="font-size:19pt">Password:</td>
+            <td>@Html.Password("MatKhau")
+                @ViewData["Loi3"]
+            </td>
+        </tr>
+        
+        <tr style="height:60px">
+            <td style="font-size:19pt">Pre-pasword:</td>
+            <td>@Html.Password("MatKhauNhapLai")
+                @ViewData["Loi4"]
+            </td>
+        </tr>
+        <tr style="height:60px">
+            <td style="font-size:19pt">Address:</td>
+            <td>@Html.TextBox("DiaChi")
+                @ViewData["Loi"]
+            </td>
+        </tr>
+        <tr style="height:60px">
+            <td style="font-size:19pt">Email:</td>
+            <td>
+                <input type="email" name="Email" placeholder="Email address">
+                @ViewData["Loi5"]
+            </td>
+        </tr>
+        <tr style="height:60px">
+            <td style="font-size:19pt">Phone Number:</td>
+            <td>@Html.TextBox("Dienthoai")
+                @ViewData["Loi6"]
+            </td>
+        </tr>
+        
+        <tr style="height:60px">
+            <td style="font-size:19pt">Date of Birth:</td>
+            <td>
+                <input type="date" name="NgaySinh" />
+                @ViewData["Loi7"]
+            </td>
+        </tr>
+        
+        <tr style="height:60px">
+            <td></td>
+            <td>
+                <input type="submit" value="REGISTER" class="btn btn-outline-success" style="width:120px; height:50px; font-size:16pt"/>                
+            </td>
+        </tr>
+        
+        
+    }
+</table>
+

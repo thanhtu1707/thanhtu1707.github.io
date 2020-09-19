@@ -1,0 +1,81 @@
+﻿@{
+    ViewBag.Title = "XemGioHang";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/Css_ChiTiet.css" rel="stylesheet" />
+@using DoAn.Models
+@model List<Item>
+
+<div class="container">
+    <div class="heading" style="background-color:green; color:white">
+        <h1>SHOPPING CART</h1>
+    </div>
+    <table style="width:95%; border-radius:10px" border="1" id="table" class="bg-light"> 
+        <tr style="background-color:lightgreen; color:white; text-align:center; font-weight:bold">
+            <th>ID PRODUCT</th>
+            <th>PRODUCT</th>
+            <th>IMAGE</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Details</th>
+            <th>Delete</th>
+            <th></th>
+        </tr>
+        @foreach (var s in Model)
+        {
+            <tr style="text-align:center">
+                <td>@s.masp</td>
+                <td>@s.tensp</td>
+                <td><img src="/Content/Image/@s.hinhanh"/></td>
+                @using (Html.BeginForm("CapNhatGioHang", "GioHang", new { masp = s.masp }))
+                {
+                    <td>
+                        <input type="number" min="1" name="txtSoLuong" value="@s.slmua" style="background-color:lightgreen; width:50px"/>
+                    </td>
+                    <td>@s.dongia</td>
+                    <td>@Html.ActionLink("DETAILS", "XemChiTiet", new { mi=@s.masp})</td>
+                    <td>@Html.ActionLink("DELETE", "XoaItem", new { masp=@s.masp })</td>
+                    <td><input type="submit" value="UPDATE" style="background-color:lightgreen; color:white"/></td>
+                }
+                
+            </tr>
+        }
+        <tr style="font-weight:bold ; text-align:right; color:red;font-size:18pt">
+            <td colspan="5">Quantity:@ViewBag.tsl</td>
+            <td colspan="3">Total:@ViewBag.ttt</td>
+        </tr>
+        <tr>
+            <td colspan="8" style="color:black;text-align:center; font-size:20pt"><a href="@Url.Action("DatHang","GioHang")">Đặt Hàng</a></td>
+        </tr>
+    </table>
+     <div class="row">
+        <div class="col-md-4 border rounded-top bg-light" id="fact">
+                <h3>Nutrition Facts Calculated</h3>
+                <div class="border-bottom"></div>
+                <br />
+                <h4>Calories:240K</h4>
+                <h4>Proteins:180g</h4>
+                <h4>Fats:40g</h4>
+                <h4>Carbohydrates: 68g</h4>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-6 border rounded-top bg-light" id="fact">
+            <h2>CART TOTALS</h2>
+            <div class="border-bottom"></div>
+            <br />
+            <div class="row">
+                <div class="col-md-3">
+                    <h4 style="font-weight:bold">Subtotal:</h4>
+                    <h4 style="font-weight:bold">Shipping:</h4>                     
+                    <h4 style="font-weight:bold">Total:</h4>
+                </div>
+                <div class="col-md-2"></div>
+                <div class="col-md-7">
+                    <h5>@ViewBag.ttt</h5>
+                    <h5>Enter your address to view shipping options</h5>
+                    <h5>@ViewBag.ttt</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

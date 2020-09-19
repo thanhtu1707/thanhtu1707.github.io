@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "DatHang";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/Css_DatHang.css" rel="stylesheet" />
+@using DoAn.Models
+@model KhachHang
+<form action="@Url.Action("DatHang")" method="post" >
+    <table>
+        <tr>
+            <td>Full Name:</td>
+            <td>@Model.HoTen</td>
+        </tr>
+
+        <tr>
+            <td>Address:</td>
+            <td>@Model.DiaChiKH</td>
+        </tr>
+
+        <tr>
+            <td>Phone Number:</td>
+            <td>@Model.DienThoaiKH</td>
+        </tr>
+        <tr>
+            
+            <td>Date:</td>
+            <td>@DateTime.Now.ToShortDateString()</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="ACCEPT" /></td>
+        </tr>
+    </table>
+</form>
